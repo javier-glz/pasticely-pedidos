@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '../frontend')));
 
 // Login sencillo para obtener token de sesión
-app.post('/api/auth/login', (req, res) => {
+app.post('/api/auth/login', (req, res) => {      // <-- CORREGIDO
   const { usuario, password } = req.body;
   if (usuario === 'admin@pasticely.com' && password === 'pasticely123') {
     return res.json({
